@@ -1,13 +1,9 @@
 #include <iostream>
 
 #include "profile.h"
+#include "network.h"
     
-template<typename T>
-void PRINTLN(T x)
-{
-    std::cout << x << '\n';
-}
-    
+#define PRINTLN(x) std::cout << x << '\n';
 
 int main()
 {
@@ -16,5 +12,9 @@ int main()
     PRINTLN(p.getFullName());
     p.setDisplayName("abc");
     PRINTLN(p.getFullName());
+
+    Network n;
+    PRINTLN(std::boolalpha << n.addUser(p.getUsername(), p.getFullName()));
+    PRINTLN(std::boolalpha << n.addUser(p.getUsername(), p.getFullName()));
     return 0;
 }
