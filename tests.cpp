@@ -21,3 +21,12 @@ TEST_CASE("Task B")
     CHECK(n.addUser(p.getUsername(), p.getFullName()) == 0);
     CHECK(n.addUser("mario", "Mario2") != 0);
 }
+
+TEST_CASE("Task C")
+{
+    Profile p("testUser", "testDisplay");
+    Network n;
+    n.addUser(p.getUsername(), p.getFullName());
+    n.addUser("testUser2", "testDisplay2");
+    CHECK(n.follow(p.getUsername(), "testUser2") == true);
+}

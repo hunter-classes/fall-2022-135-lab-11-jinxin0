@@ -16,5 +16,9 @@ int main()
     Network n;
     PRINTLN(std::boolalpha << n.addUser(p.getUsername(), p.getFullName()));
     PRINTLN(std::boolalpha << n.addUser(p.getUsername(), p.getFullName()));
+
+    n.addUser("testUser2", "testDisplay2");
+    PRINTLN(std::boolalpha << n.follow(p.getUsername(), "testUser2"));
+    n.printDot();
     return 0;
 }
